@@ -20,7 +20,7 @@ export default function Header({
               href="/about"
               className="text-foreground hover:text-primary transition-colors"
             >
-              About US
+              About
             </a>
           </nav>
         </div>
