@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-8 max-w-2xl">
@@ -24,7 +26,9 @@ export default function AboutPage() {
         <li>JavaScript</li>
       </ul>
       <h2 className="text-xl font-semibold mt-6 mb-2">License</h2>
-      <p className="text-muted-foreground">MIT License</p>
+      <Link href="/license" className="text-muted-foreground">
+        MIT License
+      </Link>
     </main>
   );
 }
