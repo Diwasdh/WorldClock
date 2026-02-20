@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-16 flex justify-center items-center min-h-[70vh]">
@@ -17,7 +15,7 @@ export default function AboutPage() {
           </p>
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="rounded-lg bg-gradient-to-br from-muted/70 to-background/80 p-6 flex flex-col items-start border border-border">
+          <div className="rounded-lg bg-linear-to-br from-muted/70 to-background/80 p-6 flex flex-col items-start border border-border">
             <h2 className="text-lg font-semibold text-foreground mb-3 border-b border-border pb-1 w-full">
               Features
             </h2>
@@ -44,7 +42,7 @@ export default function AboutPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-lg bg-gradient-to-br from-muted/70 to-background/80 p-6 flex flex-col items-start border border-border">
+          <div className="rounded-lg bg-linear-to-br from-muted/70 to-background/80 p-6 flex flex-col items-start border border-border">
             <h2 className="text-lg font-semibold text-foreground mb-3 border-b border-border pb-1 w-full">
               Technologies
             </h2>
