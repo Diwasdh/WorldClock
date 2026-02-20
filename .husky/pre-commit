@@ -1,2 +1,2 @@
 bun run lint
-bunx prettier --write .
+bun run format
