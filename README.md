@@ -1,30 +1,37 @@
+git clone https://github.com/Diwasdh/WorldClock.git
+
 # World Clock Application
 
-A modern web application built with **Next.js** for displaying time across multiple time zones worldwide.
+A modern web application built with **Next.js** (App Router) for displaying the current time in any time zone worldwide.
 
 ## Features
 
-- 🌍 View current time in multiple cities
-- 🕐 Real-time clock updates
-- 🎨 Clean and responsive UI
-- ⚡ Fast performance with Next.js
+- 🌍 Select and view the current time in any IANA time zone
+- 🕐 Real-time clock with UTC offset, city, and country info
+- 🎨 Modern, responsive UI with custom fonts (Monoton, Sansita)
+- ⚡ Fast performance with Next.js App Router
 - 📱 Mobile-friendly design
 
 ## Prerequisites
 
 - Node.js 16+
-- npm or yarn package manager
+- Bun, npm, or yarn package manager
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Diwasdh/WorldClock.git
+
 
 # Navigate to project directory
 cd world_clock
 
-# Install dependencies
+# Install dependencies (choose one)
+bun install
+# or
+yarn install
+# or
 npm install
 ```
 
@@ -32,26 +39,35 @@ npm install
 
 ```bash
 # Run development server
+bun run dev
+# or
+yarn dev
+# or
 npm run dev
 ```
 
 ## Project Structure
 
 ```
-├── pages/           # Next.js pages
-├── components/      # React components
-├── public/          # Static assets
-├── styles/          # CSS files
-└── utils/           # Utility functions
+├── app/             # Next.js app directory (routing, pages, layouts)
+│   ├── components/  # React components (Clock, Header, Footer, etc.)
+│   ├── globals.css  # Global styles
+│   └── ...          # Other app files
+├── data/            # Time zone data and utilities
+├── public/          # Static assets (favicon, LICENSE, etc.)
+├── README.md
+├── package.json
+└── ...
 ```
 
 ## Technologies Used
 
-- Next.js
+- Next.js (App Router)
 - React
+- TypeScript
 - CSS/Tailwind CSS
-- JavaScript
+- Bun, npm, or yarn
 
 ## License
 
-MIT License
+This project is licensed under the [MIT License](LICENSE).

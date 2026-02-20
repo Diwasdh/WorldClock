@@ -1,58 +1,22 @@
-// List of major world time zones and representative cities
-// You can expand or modify this list as needed
-export const worldTimeZones = [
-  { city: 'New York', country: 'USA', tz: 'America/New_York' },
-  { city: 'London', country: 'UK', tz: 'Europe/London' },
-  { city: 'Paris', country: 'France', tz: 'Europe/Paris' },
-  { city: 'Berlin', country: 'Germany', tz: 'Europe/Berlin' },
-  { city: 'Moscow', country: 'Russia', tz: 'Europe/Moscow' },
-  { city: 'Dubai', country: 'UAE', tz: 'Asia/Dubai' },
-  { city: 'Beijing', country: 'China', tz: 'Asia/Shanghai' },
-  { city: 'Tokyo', country: 'Japan', tz: 'Asia/Tokyo' },
-  { city: 'Sydney', country: 'Australia', tz: 'Australia/Sydney' },
-  { city: 'Los Angeles', country: 'USA', tz: 'America/Los_Angeles' },
-  { city: 'Chicago', country: 'USA', tz: 'America/Chicago' },
-  { city: 'Mexico City', country: 'Mexico', tz: 'America/Mexico_City' },
-  { city: 'São Paulo', country: 'Brazil', tz: 'America/Sao_Paulo' },
-  { city: 'Johannesburg', country: 'South Africa', tz: 'Africa/Johannesburg' },
-  { city: 'Cairo', country: 'Egypt', tz: 'Africa/Cairo' },
-  { city: 'Delhi', country: 'India', tz: 'Asia/Kolkata' },
-  { city: 'Bangkok', country: 'Thailand', tz: 'Asia/Bangkok' },
-  { city: 'Singapore', country: 'Singapore', tz: 'Asia/Singapore' },
-  { city: 'Hong Kong', country: 'Hong Kong', tz: 'Asia/Hong_Kong' },
-  { city: 'Auckland', country: 'New Zealand', tz: 'Pacific/Auckland' },
-  { city: 'Honolulu', country: 'USA', tz: 'Pacific/Honolulu' },
-  {
-    city: 'Buenos Aires',
-    country: 'Argentina',
-    tz: 'America/Argentina/Buenos_Aires',
-  },
-  { city: 'Toronto', country: 'Canada', tz: 'America/Toronto' },
-  { city: 'Vancouver', country: 'Canada', tz: 'America/Vancouver' },
-  { city: 'Istanbul', country: 'Turkey', tz: 'Europe/Istanbul' },
-  { city: 'Seoul', country: 'South Korea', tz: 'Asia/Seoul' },
-  { city: 'Jakarta', country: 'Indonesia', tz: 'Asia/Jakarta' },
-  { city: 'Bangkok', country: 'Thailand', tz: 'Asia/Bangkok' },
-  { city: 'Tehran', country: 'Iran', tz: 'Asia/Tehran' },
-  { city: 'Karachi', country: 'Pakistan', tz: 'Asia/Karachi' },
-  { city: 'Riyadh', country: 'Saudi Arabia', tz: 'Asia/Riyadh' },
-  { city: 'Kuala Lumpur', country: 'Malaysia', tz: 'Asia/Kuala_Lumpur' },
-  { city: 'Manila', country: 'Philippines', tz: 'Asia/Manila' },
-  { city: 'Lagos', country: 'Nigeria', tz: 'Africa/Lagos' },
-  { city: 'Nairobi', country: 'Kenya', tz: 'Africa/Nairobi' },
-  { city: 'Casablanca', country: 'Morocco', tz: 'Africa/Casablanca' },
-  { city: 'Madrid', country: 'Spain', tz: 'Europe/Madrid' },
-  { city: 'Rome', country: 'Italy', tz: 'Europe/Rome' },
-  { city: 'Zurich', country: 'Switzerland', tz: 'Europe/Zurich' },
-  { city: 'Stockholm', country: 'Sweden', tz: 'Europe/Stockholm' },
-  { city: 'Oslo', country: 'Norway', tz: 'Europe/Oslo' },
-  { city: 'Helsinki', country: 'Finland', tz: 'Europe/Helsinki' },
-  { city: 'Vienna', country: 'Austria', tz: 'Europe/Vienna' },
-  { city: 'Budapest', country: 'Hungary', tz: 'Europe/Budapest' },
-  { city: 'Warsaw', country: 'Poland', tz: 'Europe/Warsaw' },
-  { city: 'Prague', country: 'Czech Republic', tz: 'Europe/Prague' },
-  { city: 'Athens', country: 'Greece', tz: 'Europe/Athens' },
-  { city: 'Lisbon', country: 'Portugal', tz: 'Europe/Lisbon' },
-  { city: 'Brussels', country: 'Belgium', tz: 'Europe/Brussels' },
-  { city: 'Amsterdam', country: 'Netherlands', tz: 'Europe/Amsterdam' },
-];
+export interface WorldTimeZone {
+  label: string;
+  tz: string;
+  city: string;
+  country: string;
+}
+
+export const worldTimeZones: WorldTimeZone[] = Intl.supportedValuesOf(
+  'timeZone'
+)
+  .sort()
+  .map((tz) => {
+    const parts = tz.split('/');
+    const city = parts[parts.length - 1].replace(/_/g, ' ');
+    const country = parts.length > 1 ? parts[0] : 'Unknown';
+    return {
+      label: `${city}, ${country}`,
+      tz,
+      city,
+      country,
+    };
+  });
