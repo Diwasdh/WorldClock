@@ -7,10 +7,7 @@ import Footer from './components/Footer';
 export const metadata: Metadata = {
   title: 'World Clock',
   description: 'A modern world clock application',
-  icons: [
-    { rel: 'icon', url: '/favicon.svg', type: 'image/svg+xml' },
-    { rel: 'icon', url: '/favicon.ico', sizes: 'any' },
-  ],
+  icons: [{ rel: 'icon', url: '/favicon.ico', sizes: 'any' }],
 };
 
 export const monoton = Monoton({
