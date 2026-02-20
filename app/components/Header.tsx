@@ -17,7 +17,7 @@ export default function Header({
           </Link>
           <nav className="hidden md:flex space-x-6">
             <a
-              href="/about"
+              href="/WorldClock/about"
               className="text-foreground hover:text-primary transition-colors"
             >
               About
