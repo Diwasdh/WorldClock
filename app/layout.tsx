@@ -1,17 +1,7 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Monoton, Sansita } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'World Clock',
@@ -22,6 +12,16 @@ export const metadata: Metadata = {
   ],
 };
 
+export const monoton = Monoton({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+export const sansita = Sansita({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,10 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header />
+      <body className={`${sansita.className}  antialiased`}>
+        <Header extraFontClass={monoton.className} />
         {children}
       </body>
     </html>
