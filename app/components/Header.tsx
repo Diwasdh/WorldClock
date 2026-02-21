@@ -20,7 +20,7 @@ export default function Header({
               href="/WorldClock/about"
               className="text-foreground hover:text-primary transition-colors"
             >
-              About
+              About Us
             </a>
           </nav>
         </div>
